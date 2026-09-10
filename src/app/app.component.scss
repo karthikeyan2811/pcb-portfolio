@@ -1,0 +1,19 @@
+.page-outlet {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 64px);
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 32px 0 48px;
+  color: var(--pcb-silk-dim);
+
+  p {
+    margin: 4px 0 0;
+    font-family: var(--font-data);
+    font-size: 0.8rem;
+  }
+}

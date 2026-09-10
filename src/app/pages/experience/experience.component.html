@@ -1,0 +1,72 @@
+<section class="container page-section">
+  <span class="ref-label">U2 // WORK EXPERIENCE</span>
+  <h1 class="section-heading">Where I've soldered in</h1>
+
+  <div class="timeline">
+    <div class="timeline-item panel" *ngFor="let job of experience">
+      <div class="timeline-marker"></div>
+      <div class="timeline-body">
+        <div class="timeline-head">
+          <h3>{{ job.role }}</h3>
+          <span class="duration">{{ job.duration }}</span>
+        </div>
+        <p class="company">{{ job.company }} · {{ job.location }}</p>
+        <ul>
+          <li *ngFor="let point of job.highlights">{{ point }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="trace-divider container" />
+
+<section class="container page-section">
+  <span class="ref-label">R2 // NOTABLE BOARDS</span>
+  <h2 class="section-heading">Selected projects</h2>
+
+  <div class="projects-grid">
+    <mat-card class="panel project-card" *ngFor="let project of projects">
+      <mat-card-content>
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        <mat-chip-set>
+          <mat-chip *ngFor="let tool of project.tools">{{ tool }}</mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+<hr class="trace-divider container" />
+
+<section class="container page-section">
+  <span class="ref-label">S1 // QUICK SUMMARY</span>
+  <h2 class="section-heading">Professional Summary</h2>
+
+  <div class="project-sum">
+    <mat-card class="panel" *ngFor="let item of summary">
+      <mat-card-content>
+        <p>{{ item.points }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+<hr class="trace-divider container" />
+
+<section class="container page-section">
+  <span class="ref-label">Q1 // ACADEMICS</span>
+  <h2 class="section-heading">Education &amp; certifications</h2>
+
+  <div class="academics-list">
+    <div class="academic-item panel" *ngFor="let item of academics">
+      <mat-icon>school</mat-icon>
+      <div>
+        <h3>{{ item.degree }}</h3>
+        <p class="institution">{{ item.institution }} · {{ item.duration }}</p>
+        <p class="detail">{{ item.detail }}</p>
+      </div>
+    </div>
+  </div>
+</section>

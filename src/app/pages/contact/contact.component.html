@@ -1,0 +1,71 @@
+<section class="container page-section">
+  <span class="ref-label">U3 // CONTACT</span>
+  <h1 class="section-heading">Let's connect the circuit</h1>
+  <p class="intro">
+    Have a board that needs routing, a stack-up that needs review, or a project
+    kicking off? Reach out directly or send a message below.
+  </p>
+
+  <div class="contact-grid">
+    <div class="contact-cards">
+      <a class="panel contact-card" [href]="mailtoLink">
+        <mat-icon>mail</mat-icon>
+        <div>
+          <span class="ref-label small">E1 // EMAIL</span>
+          <p>{{ email }}</p>
+        </div>
+      </a>
+
+      <a class="panel contact-card" [href]="whatsappLink" target="_blank" rel="noopener">
+        <mat-icon>chat</mat-icon>
+        <div>
+          <span class="ref-label small">E2 // WHATSAPP</span>
+          <p>{{ whatsappNumber }}</p>
+        </div>
+      </a>
+
+      <div class="panel contact-card static">
+        <mat-icon>call</mat-icon>
+        <div>
+          <span class="ref-label small">E3 // PHONE</span>
+          <p>{{ phone }}</p>
+        </div>
+      </div>
+
+      <div class="panel contact-card static">
+        <mat-icon>location_on</mat-icon>
+        <div>
+          <span class="ref-label small">E4 // LOCATION</span>
+          <p>{{ location }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <form class="panel contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <span class="ref-label">J1 // SEND A MESSAGE</span>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required />
+        <mat-error *ngIf="form.get('name')?.hasError('required')">Name is required.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required />
+        <mat-error *ngIf="form.get('email')?.hasError('required')">Email is required.</mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('email')">Enter a valid email.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput rows="4" formControlName="message" required></textarea>
+        <mat-error *ngIf="form.get('message')?.hasError('required')">Message is required.</mat-error>
+        <mat-error *ngIf="form.get('message')?.hasError('minlength')">Say a little more (10+ characters).</mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit" class="cta-primary">Send message</button>
+    </form> -->
+
+  </div>
+</section>

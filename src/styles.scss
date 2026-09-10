@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Design tokens — "Circuit & Signal" PCB design system
+   Palette:
+     --pcb-substrate   #071F15  deep FR4-green board base
+     --pcb-mask        #0F3D2A  solder-mask green, panels
+     --pcb-copper      #C87137  exposed copper accent
+     --pcb-gold        #D4AF37  via / plated gold highlight
+     --pcb-silk        #EDEAE0  silkscreen off-white text
+     --pcb-trace       #2BAA6B  active trace / glow green
+   Type:
+     Display + labels: 'Space Mono' (schematic reference-designator feel)
+     Body: 'Inter'
+     Data / captions: 'JetBrains Mono'
+   ========================================================================== */
+
+:root {
+  --pcb-substrate: #3e60f7;
+  --pcb-substrate-2: #3e60f7;
+  --pcb-mask: #06134d;
+  --pcb-mask-light: #5f78e6;
+  --pcb-copper: #c87137;
+  --pcb-copper-light: #e08e50;
+  --pcb-gold: #d4af37;
+  --pcb-silk: #edeae0;
+  --pcb-silk-dim: #a9b8ae;
+  --pcb-trace: #3e60f7;
+  --pcb-trace-glow: #3e60f7;
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+  --font-data: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--pcb-substrate);
+  color: var(--pcb-silk);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+body { overflow-x: hidden; }
+
+a { color: inherit; text-decoration: none; }
+
+::selection {
+  background: var(--pcb-trace);
+  color: var(--pcb-substrate);
+}
+
+/* Reference-designator style eyebrow label, e.g. "U1 // PROFILE" */
+.ref-label {
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pcb-copper-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+
+  &::before {
+    content: '';
+    width: 18px;
+    height: 2px;
+    background: var(--pcb-copper);
+    display: inline-block;
+  }
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--pcb-silk);
+  letter-spacing: 0.01em;
+  margin: 0 0 8px 0;
+}
+
+.panel {
+  background: linear-gradient(180deg, var(--pcb-mask) 0%, var(--pcb-mask-light) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* thin dashed "trace" divider */
+.trace-divider {
+  border: none;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--pcb-copper) 0,
+    var(--pcb-copper) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  opacity: 0.5;
+  margin: 32px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+a:focus-visible,
+button:focus-visible,
+.mat-mdc-tab:focus-visible {
+  outline: 2px solid var(--pcb-trace-glow);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

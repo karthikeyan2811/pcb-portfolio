@@ -1,0 +1,28 @@
+<mat-toolbar class="pcb-toolbar">
+  <a routerLink="/" class="brand" (click)="closeMenu()">
+    <span class="brand-mark">&lt;/&gt;</span>
+    <span class="brand-text">CIRCUIT<span class="accent">&amp;</span>SIGNAL</span>
+  </a>
+
+  <span class="spacer"></span>
+
+  <nav class="nav-links">
+    <a *ngFor="let link of links"
+       [routerLink]="link.path"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+       class="nav-link">
+      <span class="nav-ref">{{ link.ref }}</span>{{ link.label }}
+    </a>
+  </nav>
+
+  <button mat-icon-button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation menu">
+    <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+</mat-toolbar>
+
+<nav class="mobile-nav" *ngIf="menuOpen">
+  <a *ngFor="let link of links" [routerLink]="link.path" (click)="closeMenu()">
+    <span class="nav-ref">{{ link.ref }}</span>{{ link.label }}
+  </a>
+</nav>

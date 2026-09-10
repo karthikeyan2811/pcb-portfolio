@@ -1,0 +1,138 @@
+.page-section { padding: 56px 24px; }
+
+.timeline {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 18px;
+  padding: 24px;
+  position: relative;
+}
+
+.timeline-marker {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--pcb-trace-glow);
+  box-shadow: 0 0 0 4px rgba(43, 170, 107, 0.18);
+  margin-top: 6px;
+}
+
+.timeline-body { flex: 1; }
+
+.timeline-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  h3 {
+    font-family: var(--font-display);
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--pcb-silk);
+  }
+}
+
+.duration {
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  color: var(--pcb-copper-light);
+}
+
+.company {
+  color: var(--pcb-trace-glow);
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  margin: 4px 0 12px;
+}
+
+.timeline-body ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--pcb-silk-dim);
+  line-height: 1.7;
+}
+
+.projects-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--pcb-silk);
+  margin: 0 0 8px;
+}
+
+.project-card p {
+  color: var(--pcb-silk-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+::ng-deep .project-card mat-chip {
+  font-family: var(--font-data) !important;
+  font-size: 0.7rem !important;
+  background: var(--pcb-mask-light) !important;
+  color: var(--pcb-silk-dim) !important;
+}
+
+.academics-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.academic-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 24px;
+  align-items: flex-start;
+
+  mat-icon { color: var(--pcb-gold); margin-top: 4px; }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin: 0 0 4px;
+    color: var(--pcb-silk);
+  }
+
+  .institution {
+    font-family: var(--font-data);
+    font-size: 0.8rem;
+    color: var(--pcb-trace-glow);
+    margin: 0 0 4px;
+  }
+
+  .detail {
+    color: var(--pcb-silk-dim);
+    font-size: 0.88rem;
+    margin: 0;
+  }
+  .project-sum {
+  width: 100%;
+  }
+
+  .summary-text {
+  line-height: 1.8;
+  font-size: 16px;
+  margin: 0;
+  white-space: normal;
+  }
+}

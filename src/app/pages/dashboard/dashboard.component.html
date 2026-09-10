@@ -1,0 +1,51 @@
+<section class="hero container">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="ref-label">U1 // PROFILE</span>
+      <h1 class="section-heading hero-name">{{ name }}</h1>
+      <p class="hero-title">{{ title }}</p>
+
+      <p class="hero-objective">{{ objective }}</p>
+
+      <div class="hero-actions">
+        <a mat-stroked-button routerLink="/contact" class="cta-secondary">
+          Get in touch
+        </a>
+        <a mat-stroked-button routerLink="/experience" class="cta-secondary">
+          View experience
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <div class="photo-frame">
+        <img [src]="photoUrl" alt="Portrait of {{ name }}" class="hero-photo"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="photo-fallback">
+          <mat-icon>memory</mat-icon>
+          <span>Add photo at<br />assets/images/profile.jpg</span>
+        </div>
+      </div>
+      <span class="photo-caption ref-label">C1 // 8MP · SOLDERED IN</span>
+    </div>
+  </div>
+</section>
+
+<hr class="trace-divider container" />
+
+<section class="stats container">
+  <div class="panel stat-card" *ngFor="let stat of stats">
+    <span class="stat-value">{{ stat.value }}</span>
+    <span class="stat-label">{{ stat.label }}</span>
+  </div>
+</section>
+
+<section class="skills container">
+  <span class="ref-label">R1 // CORE COMPETENCIES</span>
+  <h2 class="section-heading">Tools &amp; disciplines</h2>
+  <mat-chip-set aria-label="Skills">
+    <mat-chip *ngFor="let skill of skills" [class]="'chip-' + skill.level">
+      {{ skill.label }}
+    </mat-chip>
+  </mat-chip-set>
+</section>

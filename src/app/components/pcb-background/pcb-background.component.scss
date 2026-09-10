@@ -1,0 +1,98 @@
+:host {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  background: #01050c;
+}
+
+
+.pcb-canvas-host {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+
+  canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.pcb-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  /*
+   * Keeps the center visible while making
+   * the edges darker like your reference.
+   */
+
+  background:
+    radial-gradient(
+      ellipse at center,
+
+      rgba(1, 5, 12, 0.00) 0%,
+
+      rgba(1, 5, 12, 0.05) 35%,
+
+      rgba(1, 5, 12, 0.35) 70%,
+
+      rgba(1, 5, 12, 0.82) 100%
+    );
+
+
+  /*
+   * Darkens the bottom so your website
+   * text remains readable.
+   */
+
+  box-shadow:
+    inset 0 -220px 220px
+    rgba(0, 0, 0, 0.72),
+
+    inset 0 0 180px
+    rgba(0, 0, 0, 0.55);
+}
+
+
+@media (max-width: 768px) {
+
+  .pcb-overlay {
+
+    background:
+      radial-gradient(
+        ellipse at center,
+
+        rgba(1, 5, 12, 0.10) 0%,
+
+        rgba(1, 5, 12, 0.50) 60%,
+
+        rgba(1, 5, 12, 0.90) 100%
+      );
+
+    box-shadow:
+      inset 0 -180px 180px
+      rgba(0, 0, 0, 0.80);
+  }
+}
